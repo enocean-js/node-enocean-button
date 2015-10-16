@@ -1,0 +1,29 @@
+{
+  "name": "node-enocean-button",
+  "version": "0.9.0",
+  "description": "a button for node-enocean",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Holger-Will/node-enocean-button.git"
+  },
+  "keywords": [
+    "enocean",
+    "eep",
+    "f6-02-03",
+    "iot",
+    "home",
+    "automation",
+    "virtual",
+    "button"
+  ],
+  "author": "Holger Will",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Holger-Will/node-enocean-button/issues"
+  },
+  "homepage": "https://github.com/Holger-Will/node-enocean-button#readme"
+}
