@@ -33,14 +33,14 @@ the following methods can be used to invoke an event.
 
 you can check the generated telegrams with:
 
-*`.B0upCode`
-*`.B0downCode`
-*`.B1upCode`
-*`.B1downCode` 
-*`.A0upCode`
-*`.A0downCode` 
-*`.A1upCode`
-*`.A1downCode`
+* `.B0upCode`
+* `.B0downCode`
+* `.B1upCode`
+* `.B1downCode` 
+* `.A0upCode`
+* `.A0downCode` 
+* `.A1upCode`
+* `.A1downCode`
 
 the actual address can be retrieved with
 
