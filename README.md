@@ -8,7 +8,7 @@ it implements the f6-02-03 eep
 var enocean = require("node-enocean"); 
 var Button = require("../")
 enocean.listen("/dev/ttyUSB0")                 
-enocean.on("ready",function(base){ 
+enocean.on("ready",function(){ 
 	var button = new Button(enocean,1) 
 	if(process.argv[2] == "on"){
 		button.A1.click() 
