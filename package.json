@@ -1,6 +1,6 @@
 {
   "name": "node-enocean-button",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "a button for node-enocean",
   "main": "index.js",
   "scripts": {
