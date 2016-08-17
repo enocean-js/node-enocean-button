@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/Holger-Will/node-enocean-button/issues"
   },
-  "homepage": "https://github.com/Holger-Will/node-enocean-button#readme"
+  "homepage": "https://github.com/Holger-Will/node-enocean-button#readme",
+  "dependencies": {
+    "asyncawait": "^1.0.6",
+    "node-enocean": "^1.2.0"
+  }
 }
