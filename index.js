@@ -68,28 +68,28 @@ module.exports      = function ( app , id ) {
 	this.A0 = {
 		click : async (function () {
 			// for a click event call down() and the up()
-			await (this.A0.down())
-			await (this.A0.up())
+			await (app.sendAsync(this.A0downCode))
+			await (app.sendAsync(this.A0upCode))
 		}.bind( this )),
 		down  : async(function () {
-			await (app.send(this.A0downCode))
+			await (app.sendAsync(this.A0downCode))
 		}.bind(this)),
 		up    : async (function () {
-			await (app.send(this.A0upCode))
+			await (app.sendAsync(this.A0upCode))
 		}.bind(this))
 	}
 
 	this.A1 = {
 		click : async (function () {
 			// for a click event call down() and the up()
-			await (this.A1.down())
-			await (this.A1.up())
+			await (app.sendAsync(this.A1downCode))
+			await (app.sendAsync(this.A1upCode))
 		}.bind( this )),
 		down  : async(function () {
-			await (app.send(this.A1downCode))
+			await (app.sendAsync(this.A1downCode))
 		}.bind(this)),
 		up    : async (function () {
-			await (app.send(this.A1upCode))
+			await (app.sendAsync(this.A1upCode))
 		}.bind(this))
 	}
 }
