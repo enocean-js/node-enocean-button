@@ -44,10 +44,10 @@ module.exports      = function ( app , id ) {
 			await (this.B0.up())
 		}.bind( this )),
 		down  : async(function () {
-			await (app.send(this.B0downCode))
+			await (app.sendAsync(this.B0downCode))
 		}.bind(this)),
 		up    : async (function () {
-			await (app.send(this.B0upCode))
+			await (app.sendAsync(this.B0upCode))
 		}.bind(this))
 	}
 	//  do the same for the rest of the buttons...
@@ -58,10 +58,10 @@ module.exports      = function ( app , id ) {
 			await (this.B1.up())
 		}.bind( this )),
 		down  : async(function () {
-			await (app.send(this.B1downCode))
+			await (app.sendAsync(this.B1downCode))
 		}.bind(this)),
 		up    : async (function () {
-			await (app.send(this.B1upCode))
+			await (app.sendAsync(this.B1upCode))
 		}.bind(this))
 	}
 
