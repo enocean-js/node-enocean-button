@@ -13,7 +13,7 @@ var Button = require("../");                     // require the Button impl.
 // open the serialport in this case it's an USB Stick. the enocean pi is "/dev/ttyAMA0" and on Windows you would need something like "COM1"
 enocean.listen("/dev/ttyUSB0");
 enocean.on("ready", async (function(){               // when ready
-	var button = new Button(enocean,4)       // create a new Button an give it the address 1
+	var button = new Button(enocean,1)       // create a new Button an give it the address 1
 	if(process.argv[2] == "on"){
 		// if you pass the word "on" via the command line, invoke the click Event
 		// this can be use to teach in the button
