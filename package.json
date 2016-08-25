@@ -29,5 +29,8 @@
   "dependencies": {
     "asyncawait": "^1.0.6",
     "node-enocean": "^1.7.0"
+  },
+  "devDependencies": {
+    "node-enocean": "^1.7.0"
   }
 }
