@@ -5,7 +5,7 @@ it implements the f6-02-03 eep
 `npm install node-enocean-button`
 ## usage
 ```
-var enocean = require("node-enocean"); 
+var enocean = require("node-enocean")(); 
 var Button = require("../")
 enocean.listen("/dev/ttyUSB0")                 
 enocean.on("ready",function(){ 
