@@ -26,10 +26,9 @@
     "url": "https://github.com/Holger-Will/node-enocean-button/issues"
   },
   "homepage": "https://github.com/Holger-Will/node-enocean-button#readme",
-  "dependencies": {
-    "asyncawait": "^1.0.6"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "koa": "^1.2.4",
     "node-enocean": "^1.7.0"
   }
 }

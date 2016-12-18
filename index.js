@@ -1,13 +1,16 @@
+// ######################################################################################################
 // # A Button for node-enocean
 // created By Holger Will (h.will@klimapartner.de)
 // created for [Klimapartner GmbH](http://klimapartner.de/)
 // this code is published under GPL v3.0
+// ######################################################################################################
+
+// ######################################################################################################
 // use this function as a constructor for a new Button Object.
 // it implements the EEP f6-02-03
 // app should be an node-enocean Object,
-// and id should be a number between 0 and 255.
-var async = require('asyncawait/async');
-var await = require('asyncawait/await');
+// and id should be a number between 0 and 128.
+// ######################################################################################################
 module.exports      = function ( app , id ) {
 	// the header for single Byte telegrams is allways the same for all EEPs
 	this.head       = "55000707017a"
@@ -36,60 +39,75 @@ module.exports      = function ( app , id ) {
 	this.A0downCode = this.DataByte("30") // Button A0 is pressed
 	this.A1upCode   = this.DataByte("00") // Button A1 is released
 	this.A1downCode = this.DataByte("10") // Button A1 is pressed
-	// interface for invoking the Button events
+
 	this.B0 = {
-		click : async (function () {
+		click : function () {
 			// for a click event call down() and the up()
-			await (this.B0.down())
-			await (this.B0.up())
-		}.bind( this )),
-		down  : async(function () {
-			await (app.sendAsync(this.B0downCode))
-		}.bind(this)),
-		up    : async (function () {
-			await (app.sendAsync(this.B0upCode))
-		}.bind(this))
-	}
-	//  do the same for the rest of the buttons...
-	this.B1 = {
-		click : async (function () {
-			// for a click event call down() and the up()
-			await (this.B1.down())
-			await (this.B1.up())
-		}.bind( this )),
-		down  : async(function () {
-			await (app.sendAsync(this.B1downCode))
-		}.bind(this)),
-		up    : async (function () {
-			await (app.sendAsync(this.B1upCode))
-		}.bind(this))
+				var downcode=this.B0downCode
+				var upcode=this.B0upCode
+				return new Promise(function(resolve,reject){
+					app.sendAsync(downcode).then(function(){return app.sendAsync(upcode)}).then(function(){resolve()})
+				})
+
+		}.bind( this ),
+		down  : function () {
+			return app.sendAsync(this.B0downCode)
+		}.bind(this),
+		up    : function () {
+			return app.sendAsync(this.B0upCode)
+		}.bind(this)
 	}
 
-	this.A0 = {
-		click : async (function () {
+	this.B1 = {
+		click : function () {
 			// for a click event call down() and the up()
-			await (app.sendAsync(this.A0downCode))
-			await (app.sendAsync(this.A0upCode))
-		}.bind( this )),
-		down  : async(function () {
-			await (app.sendAsync(this.A0downCode))
-		}.bind(this)),
-		up    : async (function () {
-			await (app.sendAsync(this.A0upCode))
-		}.bind(this))
+			var downcode=this.B1downCode
+			var upcode=this.B1upCode
+			return new Promise(function(resolve,reject){
+				app.sendAsync(downcode).then(function(){return app.sendAsync(upcode)}).then(function(){resolve()})
+			})
+		}.bind( this ),
+		down  : function () {
+			return app.sendAsync(this.B1downCode)
+		}.bind(this),
+		up    : function () {
+			return app.sendAsync(this.B1upCode)
+		}.bind(this)
+	}
+
+
+	this.A0 = {
+		click : function () {
+			// for a click event call down() and the up()
+				var downcode=this.A0downCode
+				var upcode=this.A0upCode
+				return new Promise(function(resolve,reject){
+					app.sendAsync(downcode).then(function(){return app.sendAsync(upcode)}).then(function(){resolve()})
+				})
+
+		}.bind( this ),
+		down  : function () {
+			return app.sendAsync(this.A0downCode)
+		}.bind(this),
+		up    : function () {
+			return app.sendAsync(this.A0upCode)
+		}.bind(this)
 	}
 
 	this.A1 = {
-		click : async (function () {
+		click : function () {
 			// for a click event call down() and the up()
-			await (app.sendAsync(this.A1downCode))
-			await (app.sendAsync(this.A1upCode))
-		}.bind( this )),
-		down  : async(function () {
-			await (app.sendAsync(this.A1downCode))
-		}.bind(this)),
-		up    : async (function () {
-			await (app.sendAsync(this.A1upCode))
-		}.bind(this))
+			var downcode=this.A1downCode
+			var upcode=this.A1upCode
+			return new Promise(function(resolve,reject){
+				app.sendAsync(downcode).then(function(){return app.sendAsync(upcode)}).then(function(){resolve()})
+			})
+		}.bind( this ),
+		down  : function () {
+			return app.sendAsync(this.A1downCode)
+		}.bind(this),
+		up    : function () {
+			return app.sendAsync(this.A1upCode)
+		}.bind(this)
 	}
 }
